@@ -1,1 +1,1 @@
-const knex = require('./knex'); 
+const knex = require('./knex'); // the connection
