@@ -1,6 +1,8 @@
 const request = require('supertest');
 const knex = require('../db/knex');
 
+const app = require('../app');
+
 describe('POST Content', () => {
     before((done) => {
         //run migrations
