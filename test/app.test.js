@@ -4,6 +4,8 @@ const expect = require('chai').expect;
 
 const app = require('../app');
 
+const fixtures = require('./fixtures');
+
 describe('POST Content', () => {
     before((done) => {
         //run migrations
@@ -23,7 +25,7 @@ describe('POST Content', () => {
             .expect(200)
             .then((response) => {
                 expect(response.body).to.be.a('array');
-                console.log(response.body);
+                expect(response.body).to.deep.equal(fixtures.contents)
                 done();
             });
 
