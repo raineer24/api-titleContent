@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon"
-     },
+  },
   "dependencies": {
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
@@ -17,6 +17,9 @@
     "pg": "^7.8.2"
   },
   "devDependencies": {
-    "nodemon": "^1.18.11"
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "nodemon": "^1.18.11",
+    "supertest": "^4.0.0"
   }
 }
