@@ -8,7 +8,7 @@ module.exports = {
   },
   test: {
     client: 'pg',
-    connection: 'postgres://localhost/dummystorener',
+    connection: 'postgres://localhost/dummynerstore',
   },
   production: {
     client: 'pg',
