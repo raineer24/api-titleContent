@@ -24,7 +24,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render({
+  res.json({
     message: err.message,
     error: req.app.get('env') === 'development' ? err : {}
   });
