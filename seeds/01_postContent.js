@@ -1,4 +1,4 @@
-const contents = require('../contents');
+const postContent = require('../contents');
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries

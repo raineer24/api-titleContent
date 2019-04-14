@@ -31,4 +31,4 @@ module.exports = [
         title: "Promise Yourself",
         content: "Now a New York Times Bestseller! As a college student he spent 16 days in the Pacific Ocean with five guys and a crate of canned meat. "
     }
-]
+];
