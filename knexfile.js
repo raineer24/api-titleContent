@@ -4,7 +4,7 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: 'postgres://localhost/nerstore',
+    connection: 'postgres://localhost/storener',
   },
   test: {
     client: 'pg',
