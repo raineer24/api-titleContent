@@ -14,7 +14,7 @@ describe('POST Content', () => {
 
     });
 
-    it('List all records', () => {
+    it('List all records', (done) => {
         request(app)  
         .get('/api/v1/content')
         .set('Accept', 'application/json')
