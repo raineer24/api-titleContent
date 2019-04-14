@@ -1,3 +1,4 @@
+const request = require('supertest');
 const knex = require('../db/knex');
 
 describe('POST Content', () => {
