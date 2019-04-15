@@ -46,6 +46,12 @@ router.post('/', (req, res, next) => {
   }
 });
 
-router.put('/:id', isValidId, (req, res, next) => {});
+router.put('/:id', isValidId, (req, res, next) => {
+  if (validContent(req.body)) {
+    // update the Content
+  } else {
+    next(new Error('Invalid Content'));
+  }
+});
 
 module.exports = router;
