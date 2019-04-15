@@ -9,6 +9,12 @@ function isValidId(req, res, next) {
     next(new Error('Invalid ID'));
 }
 
+function validContent(req, res, next) {
+    const hasTitle = typeof content.title == 'string' && content.title.trim() != '';
+    const hasContent = typeof content.content == 'string' && content.content.trim() != '';
+    return hasTitle && hasContent;
+}
+
 router.get('/', (req, res) => {
     queries.getAll().then(content => {
         res.json(content);
