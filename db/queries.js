@@ -6,5 +6,8 @@ module.exports = {
     },
     getOne(id) {
         return knex('postContent').where('id', id).first();
+    },
+    create(content) {
+        return knex('content').insert(content, '*');
     }
 }

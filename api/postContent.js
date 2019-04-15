@@ -34,6 +34,9 @@ router.get('/:id', isValidId, (req,res, next) => {
 router.post('/', (req, res, next) => {
     if (validContent(req.body)) {
         // insert into db
+        queries.create(req.body).then(contents => {
+            res.json(contents[0]);
+        });
     } else {
         next(new Error('Invalid Content'));
     }
