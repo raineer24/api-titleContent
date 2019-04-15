@@ -49,6 +49,9 @@ router.post('/', (req, res, next) => {
 router.put('/:id', isValidId, (req, res, next) => {
   if (validContent(req.body)) {
     // update the Content
+    queries.update(req.params.id, req.body).then((contents) => {
+      res.json(contents[0]);
+    });
   } else {
     next(new Error('Invalid Content'));
   }
