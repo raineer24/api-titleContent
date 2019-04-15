@@ -23,6 +23,8 @@ router.get('/:id', isValidId, (req,res, next) => {
             next();
         }
     });
-})
+});
+
+router.post('/')
 
 module.exports = router;
