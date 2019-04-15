@@ -9,10 +9,16 @@ function isValidId(req, res, next) {
     next(new Error('Invalid ID'));
 }
 
-router.get('/', isValidId, (req, res) => {
-    queries.getAll().then(contents => {
-        res.json(contents)
+router.get('/', (req, res) => {
+    queries.getAll().then(content => {
+        res.json(content);
+    });
+ });
+
+router.get('/:id', isValidId, (req,res) => {
+    res.json({
+        message: 'Hello!'
     })
-});
+})
 
 module.exports = router;
