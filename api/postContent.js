@@ -9,7 +9,7 @@ function isValidId(req, res, next) {
     next(new Error('Invalid ID'));
 }
 
-function validContent(req, res, next) {
+function validContent(content) {
     const hasTitle = typeof content.title == 'string' && content.title.trim() != '';
     const hasContent = typeof content.content == 'string' && content.content.trim() != '';
     return hasTitle && hasContent;
