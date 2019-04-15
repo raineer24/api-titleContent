@@ -26,7 +26,11 @@ router.get('/:id', isValidId, (req,res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-
+    if (validContent(req.body)) {
+        // insert into db
+    } else {
+        next(new Error('Invalid Content'));
+    }
 });
 
 module.exports = router;
