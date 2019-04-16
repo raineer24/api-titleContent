@@ -57,4 +57,6 @@ router.put('/:id', isValidId, (req, res, next) => {
   }
 });
 
+router.delete('/:id', isValidId, (req, res) => {});
+
 module.exports = router;
