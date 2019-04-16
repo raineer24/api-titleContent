@@ -17,4 +17,9 @@ module.exports = {
       .where('id', id)
       .update(content, '*');
   },
+  delete(id) {
+    return knex('postContent')
+      .where('id', id)
+      .del();
+  },
 };
