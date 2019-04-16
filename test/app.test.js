@@ -68,4 +68,19 @@ describe('POST Content', () => {
         done();
       });
   });
+
+  it('Updates a content', (done) => {
+    fixtures.content.content = 'bogo ka';
+    request(app)
+      .put('/api/v1/content/9')
+      .send(fixtures.content)
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .then((response) => {
+        expect(response.body).to.be.a('object');
+        expect(response.body).to.deep.equal(fixtures.content);
+        done();
+      });
+  });
 });
