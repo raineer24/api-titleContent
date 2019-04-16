@@ -20,8 +20,9 @@ function validContent(content) {
 }
 
 router.get('/', (req, res) => {
-  queries.getAll().then((content) => {
-    res.json(content);
+  const { title, content } = req.query;
+  queries.getAll({ title, content }).then((contents) => {
+    res.json(contents);
   });
 });
 
