@@ -83,4 +83,19 @@ describe('POST Content', () => {
         done();
       });
   });
+
+  it('Deletes a content ', (done) => {
+    request(app)
+      .delete('/api/v1/content/9')
+      .send(fixtures.content)
+      .set('Accept', 'application/json')
+      .expect('Content-type', /json/)
+      .expect(200)
+      .then((response) => {
+        expect(response.body).to.be.a('object');
+        fixtures.content.id = response.body.id;
+        expect(response.body).to.deep.equal({ deleted: true });
+        done();
+      });
+  });
 });
