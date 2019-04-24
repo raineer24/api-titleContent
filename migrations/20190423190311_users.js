@@ -1,12 +1,13 @@
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('postContent', (table) => {
-      table.increments();
+  return Promise.resolve()
+  .then(() => knex.schema.createTable('postContent', (table)=> {
+    table.increments();
       table.text('title');
       table.text('content');
-  })
-  .createTable('user', (table) => {
-           table.increments('id').primary();
+  }))
+ .then(() => knex.schema.createTable('users', (table)=> {
+    table.increments('id').primary();
            table.datetime('createdAt');
            table.datetime('updatedAt');
 
@@ -17,11 +18,11 @@ exports.up = function(knex, Promise) {
            table.string('email');                             
            table.string('status');                            
            table.string('roles').defaultTo('user');           
-         
-       });
+  }))
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('postContent')
-  .dropTable('user');
+ return Promise.resolve()
+ .then(() => knex.schema.dropTable('postContent'))
+  .then(() => knex.schema.dropTable('users'))
 };

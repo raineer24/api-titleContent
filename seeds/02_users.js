@@ -1,10 +1,10 @@
-const postContent = require('../contents');
+const users = require('../users');
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('postContent').del()
+  return knex('users').del()
     .then(function () {
       // Inserts seed entries
-      return knex('postContent').insert(postContent);
+      return knex('users').insert(users);
     });
 };
