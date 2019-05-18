@@ -8,6 +8,7 @@
     "test": "(dropdb --if-exists dummynerstore && createdb dummynerstore) && NODE_ENV=test mocha"
   },
   "dependencies": {
+    "cloudinary": "^1.14.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
@@ -15,6 +16,7 @@
     "jade": "~1.11.0",
     "knex": "^0.16.5",
     "morgan": "~1.9.0",
+    "multer": "^1.4.1",
     "pg": "^7.8.2"
   },
   "devDependencies": {
